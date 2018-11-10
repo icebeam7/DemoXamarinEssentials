@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoXamarinEssentials.Paginas.PaginaTextoVoz"
+             Title="Texto a Voz">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White" Padding="5" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Texto: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Entry Grid.Row="0" Grid.Column="1" 
+                   Text="{Binding Texto, Mode=TwoWay}"  />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Volumen: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Slider Grid.Row="1" Grid.Column="1" Maximum="1" WidthRequest="200"
+                   Value="{Binding Volumen, Mode=TwoWay}" />
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Pitch: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Slider Grid.Row="2" Grid.Column="1" Maximum="2" WidthRequest="200" 
+                   Value="{Binding Pitch, Mode=TwoWay}" />
+
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Text="Háblame!" Command="{Binding HablaCommand}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

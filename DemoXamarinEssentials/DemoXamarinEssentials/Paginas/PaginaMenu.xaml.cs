@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace DemoXamarinEssentials
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace DemoXamarinEssentials.Paginas
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PaginaMenu : TabbedPage
     {
-        public MainPage()
+        public PaginaMenu ()
         {
             InitializeComponent();
         }

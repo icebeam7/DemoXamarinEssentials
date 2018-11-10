@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoXamarinEssentials.Paginas.PaginaMapa"
+             Title="Mapa">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White" Padding="5" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Latitud: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Entry Grid.Row="0" Grid.Column="1" 
+                   Text="{Binding Latitud, Mode=TwoWay}"  />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Longitud: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Entry Grid.Row="1" Grid.Column="1" 
+                   Text="{Binding Longitud, Mode=TwoWay}" />
+
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Text="Mostrar Mapa" Command="{Binding MuestraMapaCommand}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

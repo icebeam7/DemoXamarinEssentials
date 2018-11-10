@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:DemoXamarinEssentials.Converters"
+             x:Class="DemoXamarinEssentials.Paginas.PaginaRed"
+             Title="Red">
+    <ContentPage.Resources>
+        <converters:ConnectionProfileToStringConverter x:Key="profileConverter"/>
+        <converters:NetworkAccessToStringConverter x:Key="networkConverter"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="White" Padding="5" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Conexión: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Label Grid.Row="0" Grid.Column="1" 
+                   Text="{Binding Conexion, Converter={StaticResource networkConverter}}" 
+                   Style="{StaticResource LabelDetailStyle}" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Perfil: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Label Grid.Row="1" Grid.Column="1" 
+                   Text="{Binding Perfil, Converter={StaticResource profileConverter}}" 
+                   Style="{StaticResource LabelDetailStyle}"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

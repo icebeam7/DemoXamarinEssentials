@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoXamarinEssentials.Paginas"
+             x:Class="DemoXamarinEssentials.Paginas.PaginaMenu"
+            Title="Menú">
+  <!--Pages can be added as references or inline-->
+    <local:PaginaBateria/>
+    <local:PaginaRed/>
+    <local:PaginaCorreoSms/>
+    <local:PaginaTextoVoz/>
+    <local:PaginaMapa/>
+</TabbedPage>

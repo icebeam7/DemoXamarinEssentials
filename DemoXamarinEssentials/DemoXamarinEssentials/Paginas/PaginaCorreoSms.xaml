@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoXamarinEssentials.Paginas.PaginaCorreoSms"
+             Title="Correo y SMS">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White" Padding="5" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Asunto: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Entry Grid.Row="0" Grid.Column="1" 
+                   Text="{Binding Asunto, Mode=TwoWay}"  />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Texto: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Entry Grid.Row="1" Grid.Column="1" 
+                   Text="{Binding Texto, Mode=TwoWay}" />
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Para: " 
+                   Style="{StaticResource LabelTitleStyle}"/>
+            <Entry Grid.Row="2" Grid.Column="1" 
+                   Text="{Binding Para, Mode=TwoWay}" />
+
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Text="Enviar Correo" Command="{Binding EnvioCorreoCommand}" />
+
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Text="Enviar Sms" Command="{Binding EnvioSmsCommand}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
